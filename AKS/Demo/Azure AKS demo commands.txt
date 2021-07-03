@@ -1,0 +1,9 @@
+##### Azure AKS commands (part of the blog-post)
+
+az login
+az group create --location westeurope --name aksdemo
+az aks get-versions --location westeurope 
+az aks create --resource-group aksdemo --name aksdemocluster --node-count 1 --kubernetes-version 1.18.19 --generate-ssh-keys
+az aks show --name aksdemocluster --resource-group aksdemo
+az aks get-credentials --name aksdemocluster --resource-group aksdemo
+kubectl create -f https://raw.githubusercontent.com/eshlomo1/Azure/main/AKS/Demo/nginx-deployment.yaml
